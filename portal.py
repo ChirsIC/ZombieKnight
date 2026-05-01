@@ -20,7 +20,7 @@ class Portal(pygame.sprite.Sprite):
         # TODO: else:
             # TODO: folder = "images/portals/purple"
 
-        # TODO: assign load_frames() to self.portal sprites with these 3 arguments
+        # TODO: assign load_frames() to self.portal_sprites with these 3 arguments
         #  1: folder
         #  2: PORTAL_FRAMES
         #  3: (72, 72)
