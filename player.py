@@ -123,7 +123,7 @@ class Player(pygame.sprite.Sprite):
         #  2: self.VERTICAL_ACCELERATION
 
         # If the user is pressing a key, set the x-component of the acceleration to be non-zero
-        # TODO: assign pygame.keys.get_pressed() to keys
+        # TODO: assign pygame.key.get_pressed() to keys
         # TODO: if keys[pygame.K_LEFT]:
             # TODO: assign -1 * self.HORIZONTAL_ACCELERATION to self.accleration.x
             # TODO: call self.animate() with these 2 arguments
