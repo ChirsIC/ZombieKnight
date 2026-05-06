@@ -15,53 +15,46 @@ class Game:
     def __init__(self, player, zombie_group, platform_group, portal_group, bullet_group, ruby_group):
         """Initialize the game"""
         #Set constant variables
-        # TODO: assign 30 to self.STARTING_ROUND_TIME
-        # TODO: assign 5 to self.STARTING_ZOMBIE_CREATION_TIME
+        self.STARTING_ROUND_TIME = 30
+        self.STARTING_ZOMBIE_CREATION_TIME = 5
 
         #Set game values
-        # TODO: assign 0 to self.score
-        # TODO: assign 1 to self.round_number
-        # TODO: assign 0 to self.frame_count
-        # TODO: assign self.STARTING_ROUND_TIME to self.round_time
-        # TODO: assign self.STARTING_ZOMBIE_CREATION_TIME to self.zombie_creation_time
+        self.score = 0
+        self.round_number = 1
+        self.frame_count = 0
+        self.round_time = self.STARTING_ROUND_TIME
+        self.zombie_creation_time = self.STARTING_ZOMBIE_CREATION_TIME
 
         #Set fonts
-        # TODO: assign pygame.font.Font() to self.title_font with these 2 arguments
-        #  1: "fonts/Poultrygeist.ttf"
-        #  2: 48
-        # TODO: assign pygame.font.Font() to self.HUD_font with these 2 arguments
-        #  1: "fonts/Pixel.ttf"
-        #  2: 24
+        self.title_font = pygame.font.Font("fonts/Poultrygeist.ttf", 48)
+        self.HUD_font = pygame.font.Font("fonts/Pixel.ttf", 24)
 
         #Set sounds
-        # TODO: assign pygame.mixer.Sound() to self.lost_ruby_sound with this 1 argument
-        #  1: "sounds/lost_ruby.wav"
-        # TODO: assign pygame.mixer.Sound() to self.ruby_pickup_sound with this 1 argument
-        #  1: "sounds/ruby_pickup.wav"
-        # TODO: call pygame.mixer.music.load() with this 1 argument
-        #  1: "sounds/level_music.wav"
+        self.lost_ruby_sound = pygame.mixer.Sound("sounds/lost_ruby.wav")
+        self.ruby_pickup_sound = pygame.mixer.Sound("sounds/ruby_pickup.wav")
+        pygame.mixer.music.load("sounds/level_music.wav")
 
         #Attach groups and sprites
-        # TODO: assign player to self.player
-        # TODO: assign zombie_group to self.zombie_group
-        # TODO: assign platform_group to self.platform_group
-        # TODO: assign portal_group to self.portal_group
-        # TODO: assign bullet_group to self.bullet_group
-        # TODO: assign ruby_group to self.ruby_group
+        self.player = player
+        self.zombie_group = zombie_group
+        self.platform_group = platform_group
+        self.portal_group = portal_group
+        self.bullet_group = bullet_group
+        self.ruby_group = ruby_group
 
 
     def update(self):
         """Update the game"""
         #Update the round time every second
-        # TODO: add 1 to self.frame_count
-        # TODO: if self.frame_count % FPS == 0:
-            # TODO: subtract 1 from self.round_time
-            # TODO: assign 0 to self.frame_count
+        self.frame_count += 1
+        if self.frame_count % FPS == 0:
+            self.round_number -= 1
+            self.frame_count = 0
 
-        # TODO: call self.check_collisions()
-        # TODO: call self.add_zombie()
-        # TODO: call self.check_round_completion()
-        # TODO: call self.check_game_over()
+        self.check_collisions()
+        self.add_zombie()
+        self.check_round_completion()
+        self.check_game_over()
 
 
     def draw(self):
