@@ -123,7 +123,7 @@ class Player(pygame.sprite.Sprite):
         #  2: self.VERTICAL_ACCELERATION
 
         # If the user is pressing a key, set the x-component of the acceleration to be non-zero
-        # TODO: assign pygame.keys.get_pressed() to keys
+        # TODO: assign pygame.key.get_pressed() to keys
         # TODO: if keys[pygame.K_LEFT]:
             # TODO: assign -1 * self.HORIZONTAL_ACCELERATION to self.accleration.x
             # TODO: call self.animate() with these 2 arguments
@@ -217,12 +217,11 @@ class Player(pygame.sprite.Sprite):
     def fire(self):
         """Fire a 'bullet' from a sword"""
         # TODO: call self.slash_sound.play()
-        # TODO: call Bullet() with these 5 arguments
+        # TODO: call Bullet() with these 4 arguments
         #  1: self.rect.centerx
-        #  2:
-        #  3: self.rect.centery
-        #  4: self.bullet_group
-        #  5: self)
+        #  2: self.rect.centery
+        #  3: self.bullet_group
+        #  4: self)
         # TODO: assign True to self.animate_fire
 
     def reset(self):

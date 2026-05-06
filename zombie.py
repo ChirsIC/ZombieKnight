@@ -179,8 +179,8 @@ class Zombie(pygame.sprite.Sprite):
             # TODO: assign 0 to self.current_sprite
             #End the death animation
             # TODO: if self.animate_death:
-                # TODO: assign len(sprite_list) - 1 to self.current_sprite = len(sprite_list)
-                # TODO: assign False to self.animate_death
+                # TODO: assign len(sprite_list) - 1 to self.current_sprite
+        # TODO: assign False to self.animate_death
             #End the rise animation
             # TODO: if self.animate_rise:
                 # TODO: assign False to self.animate_rise
